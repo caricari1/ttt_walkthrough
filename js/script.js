@@ -11,7 +11,7 @@ for (var i=0; i<9; i++){
   squares[i].addEventListener('click', function(e) {
     for (var j=0; j < 9; j ++) {
       //looops through each square checking for click
-      if (squares[j] === e.target){
+      if (squares[j] === e.target && board[j] === '' ){
         //updates model
         board[j] = turn
         //updates view
