@@ -19,6 +19,13 @@ for (var i=0; i<9; i++){
     })
   }
 
+  //set up click listener for reset button
+  document.getElementById('reset').addEventListener('click', function(e){
+    for (var i = 0; i < 9;i++){
+      board[i] = ''//resets board to blank values
+    }
+  })
+
 // given an HTML element, it will determine the index of the square on the board
 function getSquareIndex(target) {
   for (var j=0; j < 9; j ++) {
@@ -41,7 +48,7 @@ function checkWin(){
   ]
   for(var i=0; i < winCombos.length; i++)
     var winCombo = winCombos[i];
-    //if board at 0 equals board at 1
+    //if board at 0 equals board at 1, etc..
     if (board[winCombo[0]] === board[winCombo[1]] &&
       board[winCombo[1]] === board[winCombo[2]] &&
       board[winCombo[0] !== ""] {
